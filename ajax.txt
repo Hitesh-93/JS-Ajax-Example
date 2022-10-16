@@ -1,0 +1,6 @@
+This is Ajax text file.
+
+Ajax upadate webpage without reloading.
+
+Ajax is not programming language.
+

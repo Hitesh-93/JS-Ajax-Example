@@ -13,16 +13,24 @@
 
     <h1>This is Ajax Example</h1>
 
-    <button type="button" onclick="dataLoad()">Click to Load Data</button>
+    <button type="button" onclick="dataLoad()">Click here to load data</button>
 
     <h3>
         <pre id="content"></pre>
     </h3>
 
+    <button type="button" onclick="imgLoad()">click here to load image</button>
+    <br><br>
+
+    <img src="" alt="" id="myImg">
+
 
 
 
     <script>
+
+        //  load text from txt file using ajax
+
 
         function dataLoad() {
             var xhttp = new XMLHttpRequest;
@@ -34,6 +42,22 @@
             xhttp.open("GET", "ajax.txt", true);
             xhttp.send();
 
+        }
+
+
+
+        // load image using img link from txt file
+
+
+        function imgLoad() {
+            var http = new XMLHttpRequest;
+            http.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById('myImg').src = this.responseText;
+                }
+            }
+            http.open("GET", "file.txt", true);
+            http.send();
         }
 
     </script>
